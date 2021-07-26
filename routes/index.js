@@ -42,6 +42,15 @@ router.get('/:Id',async(req,res)=>{
         res.json({message:err})
     } 
 })
+router.get('/id/:Id',async(req,res)=>{
+    try{
+        const person = await Person.find({cedula:req.params.Id});
+        res.json(person);
+    }
+    catch(err){
+        res.json({message:err})
+    } 
+})
 
 
 router.delete('/:Id',async (req,res)=>{

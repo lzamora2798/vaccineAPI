@@ -9,6 +9,15 @@ const PersonSchema = mongoose.Schema({
         type: String,
         require : true 
     },
+    lugar : {
+        type: String,
+        require : false ,
+        default : 'ESPOL',
+    },
+    fecha_vac : {
+        type:Date,
+        default:new Date("2021-08-10T14:44:56.289Z"),
+    },
     cedula : {
         type: String,
         require : true,
