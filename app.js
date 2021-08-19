@@ -22,9 +22,10 @@ const indexroutes = require('./routes/index');
 app.use('/person',indexroutes);
 
 //database info
+console.log("database",connectionString);
 mongoose.connect(connectionString,{ useUnifiedTopology: true ,useCreateIndex: true,
     useNewUrlParser: true} ,()=>{
     console.log("conectado a mongodb")
 })
 
-app.listen(8000);
+app.listen(8080);
