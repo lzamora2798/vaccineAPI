@@ -4,6 +4,10 @@ metadata:
   name: vaccineapi
   namespace: vaccineapi
 spec:
-  clusterIP: None
+  type: NodePort
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
   selector:
     app: vaccineapi
