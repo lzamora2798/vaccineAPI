@@ -6,4 +6,5 @@ metadata:
 spec:
   backend:
     serviceName: drage
+    namespace: vaccineapi
     servicePort: 8080
