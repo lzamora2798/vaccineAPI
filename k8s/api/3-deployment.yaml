@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drage
+  namespace: vaccineapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: drage
+  template:
+    metadata:
+      labels:
+        app: drage
+    spec:
+      containers:
+      - name: drage
+        image: grc.io/kubernetes-sd-323304/newvaccineback
+        ports:
+        - name: http
+          containerPort: 8080
+        env:
+        - name: MONGODB_HOSTNAME
+          value: mongodb-0.mongodb-headless.database
+        - name: MONGODB_PORT
+          value: "27017"
+        - name: MONGODB_DATABASE
+          value: liberty
+        - name: MONGODB_USERNAME
+          value: admin
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: creds
+              key: db-password
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
