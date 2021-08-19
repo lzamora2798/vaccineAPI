@@ -4,15 +4,15 @@ metadata:
   name: backend-standalone
   namespace: vaccineapi
 spec:
-  serviceName: database
+  serviceName: vaccineapi
   replicas: 1
   selector:
     matchLabels:
-      app: database
+      app: vaccineapi
   template:
     metadata:
       labels:
-        app: database
+        app: vaccineapi
         selector: backend-standalone
     spec:
       containers:
