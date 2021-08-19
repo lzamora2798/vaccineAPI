@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: basic-ingress
+  name: apibasic-ingress
   namespace: vaccineapi
 spec:
   backend:
-    serviceName: drage
-    servicePort: 8080
+    serviceName: vaccineapi
+    servicePort: 8080 
