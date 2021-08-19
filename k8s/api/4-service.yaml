@@ -7,7 +7,7 @@ spec:
   type: ClusterIP
   ports:
   - name: api
-    port: 4000
-    targetPort: http
+    port: 8080
+    targetPort: 8080
   selector:
     app: drage
