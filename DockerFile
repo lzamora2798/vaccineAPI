@@ -16,3 +16,4 @@ EXPOSE 8000
 CMD [ "node", "app.js" ]
 
 #docker build -t gcr.io/kubernetes-sd-323304/newvaccineback .
+#docker push gcr.io/kubernetes-sd-323304/newvaccineback

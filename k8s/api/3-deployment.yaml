@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: drage
-        image: grc.io/kubernetes-sd-323304/newvaccineback
+        image: gcr.io/kubernetes-sd-323304/newvaccineback
         ports:
         - name: http
           containerPort: 8080
