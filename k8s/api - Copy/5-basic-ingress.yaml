@@ -1,0 +1,9 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: apibasic-ingress
+  namespace: vaccineapi
+spec:
+  backend:
+    serviceName: vaccineapi
+    servicePort: 8080 
