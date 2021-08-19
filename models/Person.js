@@ -16,7 +16,7 @@ const PersonSchema = mongoose.Schema({
     },
     fecha_vac : {
         type:Date,
-        default:new Date("2021-08-10T14:44:56.289Z"),
+        default:new Date(),
     },
     cedula : {
         type: String,
