@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 require('dotenv/config')
 
+const PORT = 8080;
+const HOST = '0.0.0.0';
+
 const username = process.env.MONGODB_USERNAME;
 const password = process.env.MONGODB_PASSWORD;
 const dbHost = process.env.MONGODB_HOSTNAME;
@@ -28,4 +31,4 @@ mongoose.connect(connectionString,{ useUnifiedTopology: true ,useCreateIndex: tr
     console.log("conectado a mongodb")
 })
 
-app.listen(8080);
+app.listen(PORT, HOST);
