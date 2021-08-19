@@ -17,8 +17,7 @@ spec:
       - name: drage
         image: gcr.io/kubernetes-sd-323304/newvaccineback
         ports:
-        - name: http
-          containerPort: 8080
+          -containerPort: 8080
         env:
         - name: MONGODB_HOSTNAME
           value: mongodb-0.mongodb-headless.database
