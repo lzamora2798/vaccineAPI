@@ -1,24 +1,23 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: drage
+apiVersion: apps/v1             # Versión de kubernetes
+kind: Deployment                # Tipo de Objeto 
+metadata:                       # Información adicional
+  name: drage         # Nombre del despliegue
   namespace: vaccineapi
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: drage
-  template:
-    metadata:
-      labels:
-        app: drage
-    spec:
-      containers:
-      - name: drage
-        image: gcr.io/kubernetes-sd-323304/newvaccineback
-        ports:
-        -name: http
-          containerPort: 8080
+spec:                           # Especificaciones del despliegue
+  replicas: 1                   # Número de replicas que tendrá este pod
+  selector:                     # Es la forma primitiva de hacer referencia, es como un id interno
+    matchLabels:                # 
+      app: drage             # Etiqueta para que otros objetos de kubernetes lo encuentren
+  template:                     # Es la configuración final del pod 
+    metadata:                   # Tiene su propia metadata para la plantilla o pod
+      labels:                   # 
+        app: drage          # Etiqueta del contenedor
+    spec:                       # Tiene sus especificaciones
+      containers:               # Información del contenedors o mas si el pod tiene muchos
+      - name: drage          # Nombre del contenedor
+        image: gcr.io/kubernetes-sd-323304/newvaccineback      # url de imagen, docker hub defautl
+        ports:                  # puertos
+        - containerPort: 8080   # puerto 80
         env:
         - name: MONGODB_HOSTNAME
           value: mongodb-0.mongodb-headless.database
