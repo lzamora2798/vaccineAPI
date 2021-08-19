@@ -1,7 +1,7 @@
 {
   "name": "vaccinerest",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is for a test",
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js"
