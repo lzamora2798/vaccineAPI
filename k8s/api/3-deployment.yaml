@@ -17,8 +17,8 @@ spec:                           # Especificaciones del despliegue
       - name: vaccine-back-app          # Nombre del contenedor
         image: gcr.io/kubernetes-sd-323304/newvaccineback      # url de imagen, docker hub defautl
         ports:                  # puertos
-        - containerPort: 8080   # puerto 80
-       env:
+        - containerPort: 8080
+        env:
         - name: MONGODB_HOSTNAME
           value: mongodb-0.mongodb-headless.database
         - name: MONGODB_PORT
